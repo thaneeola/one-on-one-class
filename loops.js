@@ -147,3 +147,19 @@ for (let i = 0; i < 5; i++) {
   array2.push(random);
 }
 console.log(array2);
+
+/* 14. Develop a small script which generate array of 5 random numbers and the numbers must be unique*/
+let array3 = [];
+let used = [];
+for (let i = 0; i < 5; i++) {
+  let random = Math.floor(Math.random() * 100);
+  array3.push(random);
+  for (const num of array3) {
+    if (num == used) {
+      continue;
+    }
+    used.push(num);
+  }
+}
+console.log(used);
+console.log(array3);
