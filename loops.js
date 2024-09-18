@@ -163,3 +163,151 @@ for (let i = 0; i < 5; i++) {
 }
 console.log(used);
 console.log(array3);
+
+/* 15. Develop a small script which generate a six characters random id: 
+
+5j2khz
+*/
+
+let alphaNumeric = "0123456789abcdefghijklmnopqrstuvwxyz";
+
+let allCharArray = alphaNumeric.split("");
+console.log(allCharArray);
+
+let id = [];
+for (let i = 0; i < 6; i++) {
+  let randomNumber = Math.floor(Math.random() * allCharArray.length);
+  id.push(allCharArray[randomNumber]);
+}
+console.log(id.join(""));
+
+/* Develop a small script which generate any number of characters random id:
+
+  fe3jo1gl124g
+  xkqci4utda1lmbelpkm03rba */
+let randomId = [];
+for (let i = 0; i < Math.floor(Math.random() * 20); i++) {
+  let randomNumber = Math.floor(Math.random() * allCharArray.length);
+  id.push(allCharArray[randomNumber]);
+}
+
+console.log(id.join(""));
+
+/* Write a script which generates a random hexadecimal number.
+
+'#ee33df' */
+
+let hexChar = "abcdef0123456789";
+let hexArray = hexChar.split("");
+let hex = [];
+for (let i = 0; i < 6; i++) {
+  let randomNumber = Math.floor(Math.random() * hexArray.length);
+  hex.push(hexArray[randomNumber]);
+}
+
+console.log(`#${hex.join("")}`);
+
+/* Write a script which generates a random rgb color number.
+
+rgb(240,180,80) */
+let rgb = [];
+for (let i = 0; i < 3; i++) {
+  let randomNumber = Math.floor(Math.random() * 255);
+  rgb.push(randomNumber);
+}
+console.log(`rgb(${rgb.join(" ")})`);
+
+/* Using the above countries array, create the following new array.
+
+["ALBANIA", "BOLIVIA", "CANADA", "DENMARK", "ETHIOPIA", "FINLAND", "GERMANY", "HUNGARY", "IRELAND", "JAPAN", "KENYA"]*/
+
+const countries = [
+  "Albania",
+  "Bolivia",
+  "Canada",
+  "Denmark",
+  "Ethiopia",
+  "Finland",
+  "Germany",
+  "Hungary",
+  "Ireland",
+  "Japan",
+  "Kenya",
+];
+let newCountries = [];
+
+for (const UpperCountries of countries) {
+  newCountries.push(UpperCountries.toUpperCase());
+}
+console.log(newCountries);
+
+/* Using the above countries array, create an array for countries length'.
+
+[7, 7, 6, 7, 8, 7, 7, 7, 7, 5, 5]
+*/
+
+let countriesLength = [];
+for (const country of countries) {
+  countriesLength.push(country.length);
+}
+console.log(countriesLength);
+
+/*Use the countries array to create the following array of arrays:
+
+  [
+  ['Albania', 'ALB', 7],
+  ['Bolivia', 'BOL', 7],
+  ['Canada', 'CAN', 6],
+  ['Denmark', 'DEN', 7],
+  ['Ethiopia', 'ETH', 8],
+  ['Finland', 'FIN', 7],
+  ['Germany', 'GER', 7],
+  ['Hungary', 'HUN', 7],
+  ['Ireland', 'IRE', 7],
+  ['Iceland', 'ICE', 7],
+  ['Japan', 'JAP', 5],
+  ['Kenya', 'KEN', 5]
+] */
+
+let firstArray = [];
+
+for (const country of countries) {
+  let innerArray = [];
+  innerArray.push(country);
+  country.toUpperCase();
+  let first3Letters = country.slice(0, 3);
+  innerArray.push(first3Letters.toUpperCase());
+  innerArray.push(country.length);
+  firstArray.push(innerArray);
+}
+console.log(firstArray);
+
+/* In above countries array, check if there is a country or countries containing the word 'land'. If there are countries containing 'land', print it as array. If there is no country containing the word 'land', print 'All these countries are without land'.
+
+['Finland','Ireland', 'Iceland']*/
+let countryLand = []
+for (const country of countries) {
+if(country.includes('land')){
+  countryLand.push(country)
+}
+}
+console.log(countryLand)
+
+/*  In above countries array, check if there is a country or countries end with a substring 'ia'. If there are countries end with, print it as array. If there is no country containing the word 'ai', print 'These are countries ends without ia'.
+
+['Albania', 'Bolivia','Ethiopia']*/
+
+let countryEndAi= []
+for (const country of countries) {
+if(country.endsWith("ia")){
+  countryEndAi.push(country)
+}
+}
+console.log(countryEndAi)
+
+/* Using the above countries array, find the country containing the biggest number of characters.
+
+Ethiopia*/
+
+let highLetter = []
+let number =[]
