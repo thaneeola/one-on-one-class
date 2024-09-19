@@ -181,7 +181,7 @@ for (let i = 0; i < 6; i++) {
 }
 console.log(id.join(""));
 
-/* Develop a small script which generate any number of characters random id:
+/* 16. Develop a small script which generate any number of characters random id:
 
   fe3jo1gl124g
   xkqci4utda1lmbelpkm03rba */
@@ -193,7 +193,7 @@ for (let i = 0; i < Math.floor(Math.random() * 20); i++) {
 
 console.log(id.join(""));
 
-/* Write a script which generates a random hexadecimal number.
+/* 17. Write a script which generates a random hexadecimal number.
 
 '#ee33df' */
 
@@ -207,7 +207,7 @@ for (let i = 0; i < 6; i++) {
 
 console.log(`#${hex.join("")}`);
 
-/* Write a script which generates a random rgb color number.
+/* 18.  Write a script which generates a random rgb color number.
 
 rgb(240,180,80) */
 let rgb = [];
@@ -217,7 +217,7 @@ for (let i = 0; i < 3; i++) {
 }
 console.log(`rgb(${rgb.join(" ")})`);
 
-/* Using the above countries array, create the following new array.
+/*19.  Using the above countries array, create the following new array.
 
 ["ALBANIA", "BOLIVIA", "CANADA", "DENMARK", "ETHIOPIA", "FINLAND", "GERMANY", "HUNGARY", "IRELAND", "JAPAN", "KENYA"]*/
 
@@ -241,7 +241,7 @@ for (const UpperCountries of countries) {
 }
 console.log(newCountries);
 
-/* Using the above countries array, create an array for countries length'.
+/*20. Using the above countries array, create an array for countries length'.
 
 [7, 7, 6, 7, 8, 7, 7, 7, 7, 5, 5]
 */
@@ -252,7 +252,7 @@ for (const country of countries) {
 }
 console.log(countriesLength);
 
-/*Use the countries array to create the following array of arrays:
+/* 21. Use the countries array to create the following array of arrays:
 
   [
   ['Albania', 'ALB', 7],
@@ -282,32 +282,133 @@ for (const country of countries) {
 }
 console.log(firstArray);
 
-/* In above countries array, check if there is a country or countries containing the word 'land'. If there are countries containing 'land', print it as array. If there is no country containing the word 'land', print 'All these countries are without land'.
+/* 22. In above countries array, check if there is a country or countries containing the word 'land'. If there are countries containing 'land', print it as array. If there is no country containing the word 'land', print 'All these countries are without land'.
 
 ['Finland','Ireland', 'Iceland']*/
-let countryLand = []
+let countryLand = [];
 for (const country of countries) {
-if(country.includes('land')){
-  countryLand.push(country)
+  if (country.includes("land")) {
+    countryLand.push(country);
+  }
 }
-}
-console.log(countryLand)
+console.log(countryLand);
 
-/*  In above countries array, check if there is a country or countries end with a substring 'ia'. If there are countries end with, print it as array. If there is no country containing the word 'ai', print 'These are countries ends without ia'.
+/*23.  In above countries array, check if there is a country or countries end with a substring 'ia'. If there are countries end with, print it as array. If there is no country containing the word 'ai', print 'These are countries ends without ia'.
 
 ['Albania', 'Bolivia','Ethiopia']*/
 
-let countryEndAi= []
+let countryEndAi = [];
 for (const country of countries) {
-if(country.endsWith("ia")){
-  countryEndAi.push(country)
+  if (country.endsWith("ia")) {
+    countryEndAi.push(country);
+  }
 }
-}
-console.log(countryEndAi)
+console.log(countryEndAi);
 
-/* Using the above countries array, find the country containing the biggest number of characters.
+/* 24. Using the above countries array, find the country containing the biggest number of characters.
 
 Ethiopia*/
 
-let highLetter = []
-let number =[]
+let number = [];
+for (const country of countries) {
+  number.push(country.length);
+  console.log(number);
+}
+
+let maxNumber = Math.max(...number);
+let arrIndex = number.indexOf(maxNumber);
+console.log(countries[arrIndex]);
+
+/* 25. Using the above countries array, find the country containing only 5 characters.
+
+['Japan', 'Kenya']*/
+
+let countryFive = [];
+for (const country of countries) {
+  if (country.length === 5) {
+    countryFive.push(country);
+  }
+}
+console.log(countryFive);
+
+const webTechs = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Redux",
+  "Node",
+  "MongoDB",
+];
+
+/* 26. Find the longest word in the webTechs array */
+let longWordIndex = [];
+for (const tech of webTechs) {
+  longWordIndex.push(tech.length);
+}
+
+let maxNumber1 = Math.max(...longWordIndex);
+let arrIndex1 = longWordIndex.indexOf(maxNumber1);
+console.log(webTechs[arrIndex1]);
+
+/* 27. Use the webTechs array to create the following array of arrays:
+
+[["HTML", 4], ["CSS", 3],["JavaScript", 10],["React", 5],["Redux", 5],["Node", 4],["MongoDB", 7]] */
+
+let techArray = [];
+
+for (const tech of webTechs) {
+  let innerArray = [];
+  innerArray.push(tech);
+  innerArray.push(tech.length);
+  techArray.push(innerArray);
+}
+console.log(techArray);
+
+/* 28. An application created using MongoDB, Express, React and Node is called a MERN stack app. Create the acronym MERN by using the array mernStack*/
+
+let mernStack = "mernStack";
+console.log(mernStack.slice(0, 4).toUpperCase());
+
+/* 29. Iterate through the array, ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"] using a for loop or for of loop and print out the items.*/
+
+for(let i = 0;i< webTechs.length;i++){
+console.log(webTechs[i])
+}
+
+for(const tech of webTechs){
+  console.log(tech)
+}
+/* 30. This is a fruit array , ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop without using a reverse method.*/
+
+let fruits =  ['banana', 'orange', 'mango', 'lemon']
+let revFruits = []
+for(const fruit of fruits){
+  revFruits.unshift(fruit)
+} 
+console.log(revFruits)
+
+/* 31. Print all the elements of array as shown below.
+
+  const fullStack = [
+    ['HTML', 'CSS', 'JS', 'React'],
+    ['Node', 'Express', 'MongoDB']
+  ]
+  HTML
+  CSS
+  JS
+  REACT
+  NODE
+  EXPRESS
+  MONGODB */
+
+  const fullStack = [
+    ['HTML', 'CSS', 'JS', 'React'],
+    ['Node', 'Express', 'MongoDB']
+  ]
+  for(const tech of fullStack[0]){
+    console.log(tech)
+  }
+  for(const tech of fullStack[1]){
+    console.log(tech)
+  }
