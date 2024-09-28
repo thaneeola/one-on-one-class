@@ -325,8 +325,8 @@ ycArC5yrRupyG00S
 UbGxOFI7UXSWAyKN
 dIV0SSUTgAdKwStr */
 function userIdGeneratedByUser() {
-  let charNumber = 4; // use prompt when you are using it 
-  let numberofid = 3; // use prompt when you are using it 
+  let charNumber = 4; // use prompt when you are using it
+  let numberofid = 3; // use prompt when you are using it
 
   for (let i = 0; i < numberofid; i++) {
     let alphaNumeric = "0123456789abcdefghijklmnopqrstuvwxyz";
@@ -339,25 +339,111 @@ function userIdGeneratedByUser() {
       let randomNumber = Math.floor(Math.random() * allCharArray.length);
       id.push(allCharArray[randomNumber]);
     }
-    
-    console.log(id.join(""))
+
+    console.log(id.join(""));
   }
 }
-userIdGeneratedByUser()
+userIdGeneratedByUser();
 
 /* Write a function name rgbColorGenerator and it generates rgb colors.
 
 rgbColorGenerator()
 rgb(125,244,255)*/
 
-function rgbColorGenerator(){
+function rgbColorGenerator() {
   let rgb = [];
-for (let i = 0; i < 3; i++) {
-  let randomNumber = Math.floor(Math.random() * 255);
-  rgb.push(randomNumber);
+  for (let i = 0; i < 3; i++) {
+    let randomNumber = Math.floor(Math.random() * 255);
+    rgb.push(randomNumber);
+  }
+  console.log(`rgb(${rgb.join(" ")})`);
 }
-console.log(`rgb(${rgb.join(" ")})`);
+rgbColorGenerator();
+
+/* Write a function generateColors which can generate any number of hexa or rgb colors.
+
+console.log(generateColors('hexa', 3)) // ['#a3e12f', '#03ed55', '#eb3d2b']
+console.log(generateColors('hexa', 1)) // '#b334ef'
+console.log(generateColors('rgb', 3)) // ['rgb(5, 55, 175)', 'rgb(50, 105, 100)', 'rgb(15, 26, 80)']
+console.log(generateColors('rgb', 1))  */
+
+function generateColors(colorcode, num) {
+  let hex1 = [];
+  let hex = [];
+  let rgb = [];
+  for (let i = 0; i < num; i++) {
+    if (colorcode === "hex") {
+      let hexChar = "abcdef0123456789";
+      let hexArray = hexChar.split("");
+
+      for (let j = 0; j < 6; j++) {
+        let randomNumber = Math.floor(Math.random() * hexArray.length);
+        hex.push(hexArray[randomNumber]);
+      }
+
+      hex1.push(`#${hex.join("")}`);
+      hex = []; // reset hex array for next iteration
+    } else if (colorcode === "rgb") {
+      let r = Math.floor(Math.random() * 256);
+      let g = Math.floor(Math.random() * 256);
+      let b = Math.floor(Math.random() * 256);
+      rgb.push(`rgb(${r}, ${g}, ${b})`);
+    }
+  }
+
+  if (num === 1) {
+    return colorcode === "hex" ? hex1[0] : rgb[0];
+  } else {
+    return colorcode === "hex" ? hex1 : rgb;
+  }
 }
-rgbColorGenerator()
+
+console.log(generateColors("hex", 4));
+console.log(generateColors("rgb", 1));
+console.log(generateColors("hex", 4));
+
+/* Call your function shuffleArray, it takes an array as a parameter and it returns a shuffled array*/
+function shuffleArray(array) {
+  let shuffledArray = [];
+  for (let i = 0; i < array.length; i++) {
+    let randomNumber = Math.floor(Math.random() * array.length);
+    shuffledArray.push(array[randomNumber]);
+  }
+  return shuffledArray;
+}
+
+console.log(shuffleArray([1, 3, 4, 5]));
+
+// Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+function factorial(n) {
+  let result = 1;
+  for (let i = 2; i <= n; i++) {
+    result *= i;
+  }
+}
+
+// Call your function isEmpty, it takes a parameter and it checks if it is empty or not
+
+function isEmpty(a) {
+  if (a.length === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// Call your function sum, it takes any number of arguments and it returns the sum.
+function sum(...args) {
+  let sum = 0;
+  for (let i = 0; i < args.length; i++) {
+    sum += args[i];
+
+  }
+  return sum
+}
+
+console.log(sum(1,2,3,5,6))
+
+// Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
 
 
